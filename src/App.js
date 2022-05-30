@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from 'react-dom/client';
 import BoatList from './BoatList.js';
+// import { getBoats } from './RestClient.js';
 import Board, { moveCard } from '@asseinfo/react-kanban';
 import '@asseinfo/react-kanban/dist/styles.css';
 import './App.css';
@@ -35,7 +36,6 @@ const startingBoard = {
 function App() {
   return (
     <div className="App">
-      {/* <header className="App-header"> */}
         <h1>Boat Tracker</h1>
         <Board initialBoard={startingBoard} 
           allowRemoveLane
@@ -62,13 +62,15 @@ function App() {
         >
           Learn React
         </a>
-      {/* </header> */}
     </div>
   );
 }
 
-const rootElement = document.getElementById("root");
-ReactDOM.render(<App />, rootElement);
-
+// This follows the suggestion in
+// https://reactjs.org/blog/2022/03/08/react-18-upgrade-guide.html#updates-to-client-rendering-apis
+// but still doesn't seem to work ... not sure why ...
+const container = document.getElementById("root");
+const root = createRoot(container); 
+root.render(<App />);
 
 export default App;

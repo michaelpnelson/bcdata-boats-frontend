@@ -39,16 +39,7 @@ class BoatList extends React.Component {
       } else if (!isLoaded) {
         return <div>Loading...</div>;
       } else {
-        return <p>{boats}</p>;
-        // return (
-        //   <ul>
-        //     {boats.map(boat => (
-        //       <li>
-        //         {boat}
-        //       </li>
-        //     ))}
-        //   </ul>
-        // );
+        return <p>Status of all boats: {boats}</p>;
       }
     }
   }
