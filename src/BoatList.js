@@ -39,7 +39,7 @@ class BoatList extends React.Component {
       } else if (!isLoaded) {
         return <div>Loading...</div>;
       } else {
-        return <p>Status of all boats: {boats}</p>;
+        return <p>Status of all boats from backend: {boats}</p>;
       }
     }
   }

@@ -1,5 +1,3 @@
-import React, { useState } from "react";
-import { createRoot } from 'react-dom/client';
 import BoatList from './BoatList.js';
 // import { getBoats } from './RestClient.js';
 import Board, { moveCard } from '@asseinfo/react-kanban';
@@ -51,26 +49,8 @@ function App() {
           })}
           onCardNew={console.log}/>
         <BoatList/>
-        <p>
-          More to come!
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
     </div>
   );
 }
-
-// This follows the suggestion in
-// https://reactjs.org/blog/2022/03/08/react-18-upgrade-guide.html#updates-to-client-rendering-apis
-// but still doesn't seem to work ... not sure why ...
-const container = document.getElementById("root");
-const root = createRoot(container); 
-root.render(<App />);
 
 export default App;
